@@ -34,7 +34,8 @@ axios.interceptors.response.use(
           '登录信息已过期，请重新登录！', 1.5,
           onClose => {
             window.localStorage.removeItem('X-AUTH-TOKEN');
-            history.push('/login');
+            // history.push('/login') //两种方式都可
+            window.location.href = 'login'
           })
       },1500)
 

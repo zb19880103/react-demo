@@ -19,7 +19,7 @@ class Routes extends Component{
       <div>
         <Router>
           <Switch>
-            <Route path="/login" component={Login}></Route>
+            <Route exact path="/login" component={Login}></Route>
             <Route path="/index" component={Index}></Route>
             <Route component={NoMatch}></Route>
           </Switch>

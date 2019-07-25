@@ -128,7 +128,7 @@ class Index extends Component {
           EchartD1: EchartD1
         })
       }else{
-        this.commonInfo.error('加载招商推荐等级分布数据失败');
+        global.commonInfo.error('加载招商推荐等级分布数据失败');
       };
   }
   async getFinancingTradeDis() {
@@ -148,7 +148,7 @@ class Index extends Component {
         EchartD2: EchartD2
       })
     }else{
-      this.commonInfo.error('加载本月获融资的企业行业分布数据失败');
+      global.commonInfo.error('加载本月获融资的企业行业分布数据失败');
     };
   }
   /**
@@ -170,7 +170,7 @@ class Index extends Component {
         loading: false
       })
     }else{
-      this.commonInfo.error('获取融资金额排行榜数据失败');
+      global.commonInfo.error('获取融资金额排行榜数据失败');
     };
   }
   async listFinancingAmountRank1 () {
@@ -189,7 +189,7 @@ class Index extends Component {
         loading: false
       })
     }else{
-      this.commonInfo.error('获取融资金额排行榜2数据失败');
+      global.commonInfo.error('获取融资金额排行榜2数据失败');
     };
   }
   handleSubmitPagination1 = (comment) =>{

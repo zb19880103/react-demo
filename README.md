@@ -12,10 +12,10 @@
 this.post 或者 this.get等
 
 # 提示信息
-this.commonInfo.success(msg, timer, callback);<br>
-this.commonInfo.error(msg, timer, callback);<br>
-this.commonInfo.warning(msg, timer, callback);<br>
-this.commonInfo.info(msg, timer, callback);<br>
+global.commonInfo.success(msg, timer, callback);<br>
+global.commonInfo.error(msg, timer, callback);<br>
+global.commonInfo.warning(msg, timer, callback);<br>
+global.commonInfo.info(msg, timer, callback);<br>
 
 # 分页的使用
 

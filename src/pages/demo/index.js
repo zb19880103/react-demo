@@ -25,16 +25,16 @@ class Demo extends Component {
     console.log(comment)
   }
   successTip(){
-    this.commonInfo.success('这是成功提示！');
+    global.commonInfo.success('这是成功提示！');
   }
   errorTip(){
-    this.commonInfo.error('这是错误提示！');
+    global.commonInfo.error('这是错误提示！');
   }
   warningTip(){
-    this.commonInfo.warning('这是警告提示！');
+    global.commonInfo.warning('这是警告提示！');
   }
   infoTip(){
-    this.commonInfo.info('这是普通信息提示！');
+    global.commonInfo.info('这是普通信息提示！');
   }
   render() {
     return (

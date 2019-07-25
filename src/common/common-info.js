@@ -1,7 +1,6 @@
 import { message } from 'antd';
-import {Component} from 'react';
 
-let commonInfo = {
+global.commonInfo = {
   /**
    * 成功提示
    * @param msg 提示信息
@@ -41,6 +40,5 @@ let commonInfo = {
     message.destroy();
     message.info(msg, timer, callback);
   },
-}
 
-Component.prototype.commonInfo = commonInfo;
+}

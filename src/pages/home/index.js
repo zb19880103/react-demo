@@ -21,7 +21,7 @@ class Home extends Component {
   };
   componentWillMount(){
     if (!localStorage.getItem('X-AUTH-TOKEN')) {
-      this.commonInfo.warning(
+      global.commonInfo.warning(
         '你还没有登录哦，请先登录！', 1.5,
         onClose => {
           this.props.history.push('/login');

@@ -96,7 +96,7 @@ class Pagina extends Component {
       };
       this.props.handleSubmitPagination({result, newPagination});
     }else{
-      this.commonInfo.error('获取分页数据失败');
+      global.commonInfo.error('获取分页数据失败');
     };
   }
   render() {

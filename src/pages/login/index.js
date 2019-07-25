@@ -29,7 +29,7 @@ class LoginPage extends Component {
               window.localStorage.setItem("X-AUTH-TOKEN", '0000');
               this.props.history.push('/index');
             } else {
-              this.commonInfo.warning('用户名或密码错误')
+              global.commonInfo.warning('用户名或密码错误')
             }
           },
           err => {

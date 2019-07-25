@@ -30,7 +30,7 @@ axios.interceptors.response.use(
     MProgress.done();
     if (data.data.code === 2001 || data.data.code === 2002) {
       setTimeout( ()=>{
-        this.commonInfo.warning(
+        global.commonInfo.warning(
           '登录信息已过期，请重新登录！', 1.5,
           onClose => {
             window.localStorage.removeItem('X-AUTH-TOKEN');
@@ -45,13 +45,13 @@ axios.interceptors.response.use(
     MProgress.done();
     if (err.response.status === 504 || err.response.status === 404) {
       console.log("服务器被吃了⊙﹏⊙∥");
-      this.commonInfo.commonInfo.warning('服务器被吃了⊙﹏⊙∥')
+      global.commonInfo.commonInfo.warning('服务器被吃了⊙﹏⊙∥')
     } else if (err.response.status === 401) {
       console.log("登录信息失效⊙﹏⊙∥");
-      this.commonInfo.warning('登录信息失效⊙﹏⊙∥')
+      global.commonInfo.warning('登录信息失效⊙﹏⊙∥')
     } else if (err.response.status === 500) {
       console.log("服务器开小差了⊙﹏⊙∥");
-      this.commonInfo.warning('服务器开小差了⊙﹏⊙∥')
+      global.commonInfo.warning('服务器开小差了⊙﹏⊙∥')
     }
     return Promise.reject(err);
   }

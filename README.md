@@ -1,69 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
 ### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+开始运行
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+开始测试
 
 ### `npm run build`
+打包项目
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+本框架使用antd UI框架，封装了axios请求，分页，提示信息，路由配置，404页面，登录，是否登录判断等常用得组件
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+常用demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 发起请求
+this.post 或者 this.get等
 
-### `npm run eject`
+# 提示信息
+this.commonInfo.success(msg, timer, callback);
+this.commonInfo.error(msg, timer, callback);
+this.commonInfo.warning(msg, timer, callback);
+this.commonInfo.info(msg, timer, callback);
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# 分页的使用
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.导入分页组件
+2.state定义数据
+    paginationData: {
+        total: 0,
+        pageSizeOptions: ['5', '10', '20', '30'],
+        url: '/attract/investment/financing_amount/list',
+        params: {
+          pageNum: 1,
+          pageSize: 5,
+        },
+        showQuickJumper: true,  //是否可以快速跳转至某页
+        showSizeChanger: true,  //是否可以改变 pageSize
+        showTotal: true,        //用于显示数据总量和当前数据顺序
+        method: 'post'
+      },
+3.  handleSubmitPagination = (comment) =>{   //回调方法
+      console.log(comment) //可获取数据和分页页码等
+    }
+4.<Pagina pagination={this.state.paginationData} handleSubmitPagination={this.handleSubmitPagination}/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# 路由的配置
+    这里是随便写了几个组件，实现路由的跳转功能，登录也是随便写的，主要实现未登录跳转登录页，已登录跳转首页，以及路由不匹配跳转404页面等，当然http请求也有判断验证登录
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# react-
+# react-demo
+    本人水平有限，初学react，摸索中，学渣级，考虑的也不全面，各位大神手下留情，勿喷，上传github只为做个备份，谢谢！

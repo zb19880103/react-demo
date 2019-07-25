@@ -1,0 +1,95 @@
+.ant-layout-sider-collapsed .anticon {
+  font-size: 20px;
+}
+
+.containAll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .github {
+    position: absolute;
+    top: 20px;
+    left: 14px;
+    font-size: 36px;
+    animation: App-logo-spin infinite 20s linear;
+  }
+  .author {
+    position: absolute;
+    top: 20px;
+    left: 65px;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "Microsoft YaHei","SimHei"
+  }
+  .white {
+    color: white
+  }
+  .menu {
+    height: 100%;
+    padding-top: 75px;
+  }
+  .switch {
+    position: absolute;
+    bottom: 4%;
+    right: 5%;
+  }
+}
+
+.ant-layout-sider-trigger {
+  display: none;
+}
+
+.ant-layout-header {
+  margin: 0 16px;
+  background: #fff;
+  padding: 0 10px;
+}
+.ant-layout-content{
+  margin: 20px;
+  padding: 10px;
+  background: #fff;
+}
+.ant-layout-footer{
+  margin: 0 16px;
+  text-align: center;
+  background: #fff;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+.ant-menu-submenu-vertical > .ant-menu-submenu-title:after {
+  display: none;
+}
+
+.ant-menu-submenu-vertical .ant-menu-submenu-title span span {
+  display: none;
+}
+
+.ant-layout-sider-collapsed .author {
+  display: none;
+}
+
+.logOut {
+  float: right;
+  margin-top: 8px;
+}
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color .3s;
+  &:hover {
+    color: #108ee9;
+  }
+}
+
+

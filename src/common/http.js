@@ -1,13 +1,13 @@
 import axios from "axios";
 import qs from "qs";
-import {Component} from 'react';
+import { Component } from 'react';
 import MProgress from './spin';
-import { createHashHistory } from 'history'; // hash路由
+// import { createHashHistory } from 'history'; // hash路由
 // 或者
 // import { createBrowserHistory } from 'history'; // history路由
 
 const TIMEOUT = 10000;
-const history = createHashHistory();
+// const history = createHashHistory();
 
 let baseUrl = '/api/web/';
 
@@ -35,7 +35,7 @@ axios.interceptors.response.use(
           onClose => {
             window.localStorage.removeItem('X-AUTH-TOKEN');
             // history.push('/login') //两种方式都可
-            window.location.href = 'login'
+            window.location.href = '/login'
           })
       },1500)
 

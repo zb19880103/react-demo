@@ -27,6 +27,7 @@ class Main extends Component {
         }}
       >
         <Switch>
+          <Route exact path="/" component={Index}></Route>
           <Route exact path="/index" component={Index}></Route>
           <Route exact path="/index/music" component={Music}></Route>
           <Route exact path="/index/tool" component={Tool}></Route>

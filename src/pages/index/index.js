@@ -240,7 +240,6 @@ class Index extends Component {
           <Col span={12}><EchartsList data={this.state.EchartD1}></EchartsList></Col>
           <Col span={12}><EchartsList data={this.state.EchartD2}></EchartsList></Col>
         </Row>
-        {/*<Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } loading={this.state.loading} dataSource={this.state.financingAmountPagination} />*/}
         <Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } loading={{spinning: this.state.loading1,tip: '努力加载中...'}} dataSource={this.state.financingAmountPagination} />
         <Pagina pagination={this.state.paginationData} handleOpenLoading={this.handleOpenLoading1.bind(this)} handleSubmitPagination={this.handleSubmitPagination1}/>
 

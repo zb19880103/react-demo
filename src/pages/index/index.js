@@ -48,7 +48,8 @@ class Index extends Component {
         showTotal: true,        //用于显示数据总量和当前数据顺序
         method: 'post'
       },
-      loading : true
+      loading1 : true,
+      loading2 : true,
     };
     this.columns = [{
       dataIndex: 'ranking',
@@ -167,7 +168,7 @@ class Index extends Component {
       this.setState({
         financingAmountPagination: data.listData,
         paginationData: newpaginationData,
-        loading: false
+        loading1: false
       })
     }else{
       global.commonInfo.error('获取融资金额排行榜数据失败');
@@ -186,7 +187,7 @@ class Index extends Component {
       this.setState({
         financingAmountPagination1: data.listData,
         paginationData1: newpaginationData,
-        loading: false
+        loading2: false
       })
     }else{
       global.commonInfo.error('获取融资金额排行榜2数据失败');
@@ -199,7 +200,17 @@ class Index extends Component {
     this.setState({
       financingAmountPagination: tableData,
       paginationData: newpaginationData,
-      loading: false
+      loading1: false
+    })
+  }
+  handleOpenLoading1(){
+    this.setState({
+      loading1: true
+    })
+  }
+  handleOpenLoading2(){
+    this.setState({
+      loading2: true
     })
   }
   handleSubmitPagination2 = (comment) =>{
@@ -209,7 +220,7 @@ class Index extends Component {
     this.setState({
       financingAmountPagination1: tableData,
       paginationData1: newpaginationData,
-      loading: false
+      loading2: false
     })
   }
   componentDidMount(){
@@ -230,11 +241,11 @@ class Index extends Component {
           <Col span={12}><EchartsList data={this.state.EchartD2}></EchartsList></Col>
         </Row>
         {/*<Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } loading={this.state.loading} dataSource={this.state.financingAmountPagination} />*/}
-        <Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } dataSource={this.state.financingAmountPagination} />
-        <Pagina pagination={this.state.paginationData} handleSubmitPagination={this.handleSubmitPagination1}/>
+        <Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } loading={{spinning: this.state.loading1,tip: '努力加载中...'}} dataSource={this.state.financingAmountPagination} />
+        <Pagina pagination={this.state.paginationData} handleOpenLoading={this.handleOpenLoading1.bind(this)} handleSubmitPagination={this.handleSubmitPagination1}/>
 
-        <Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } dataSource={this.state.financingAmountPagination1} />
-        <Pagina pagination={this.state.paginationData1} handleSubmitPagination={this.handleSubmitPagination2}/>
+        <Table columns={this.columns} rowKey="ranking" bordered={true} pagination={ false } loading={this.state.loading2} dataSource={this.state.financingAmountPagination1} />
+        <Pagina pagination={this.state.paginationData1} handleOpenLoading={this.handleOpenLoading2.bind(this)} handleSubmitPagination={this.handleSubmitPagination2}/>
       </div>
     )
   }

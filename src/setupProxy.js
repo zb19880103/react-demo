@@ -1,5 +1,5 @@
 const proxy = require('http-proxy-middleware')
-let ip = '192.168.30.72';
+let ip = '172.16.21.150';
 let target = 'http://' + ip + ':80';
 module.exports = function (app) {
   app.use(proxy('/api/web/', {

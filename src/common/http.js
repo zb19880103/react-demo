@@ -1,7 +1,7 @@
 import axios from "axios";
 import qs from "qs";
 import { Component } from 'react';
-import MProgress from './spin';
+// import MProgress from './spin';
 // import { createHashHistory } from 'history'; // hash路由
 // 或者
 // import { createBrowserHistory } from 'history'; // history路由
@@ -14,11 +14,11 @@ let baseUrl = '/api/web/';
 // 请求前拦截
 axios.interceptors.request.use(
   config => {
-    MProgress.start();
+    // MProgress.start();
     return config;
   },
   err => {
-    MProgress.done();
+    // MProgress.done();
     console.log("请求超时");
     return Promise.reject(err);
   }
@@ -27,7 +27,7 @@ axios.interceptors.request.use(
 // 返回后拦截
 axios.interceptors.response.use(
   data => {
-    MProgress.done();
+    // MProgress.done();
     if (data.data.code === 2001 || data.data.code === 2002) {
       setTimeout( ()=>{
         global.commonInfo.warning(
@@ -43,7 +43,7 @@ axios.interceptors.response.use(
     return data;
   },
   err => {
-    MProgress.done();
+    // MProgress.done();
     if (err.response.status === 504 || err.response.status === 404) {
       console.log("服务器被吃了⊙﹏⊙∥");
       global.commonInfo.commonInfo.warning('服务器被吃了⊙﹏⊙∥')

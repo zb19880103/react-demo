@@ -81,6 +81,7 @@ class Pagina extends Component {
    * @author 张斌
    */
   async paginationRequest(config, params) {
+    this.props.handleOpenLoading();
     let res = '';
     if(config.method === 'post'){
       res = await this.post(config.url,config.data,{type: "json"});

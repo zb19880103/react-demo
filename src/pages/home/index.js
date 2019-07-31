@@ -6,7 +6,6 @@ import './index.scss'
 import {Layout} from 'antd';
 const { Footer } = Layout;
 
-
 class Home extends Component {
   constructor(props) {
     super(props);

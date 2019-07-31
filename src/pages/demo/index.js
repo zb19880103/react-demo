@@ -19,7 +19,13 @@ class Demo extends Component {
         showTotal: true,        //用于显示数据总量和当前数据顺序
         method: 'post'
       },
+      loading: true
     };
+  }
+  handleOpenLoading(){
+    this.setState({
+      loading: true
+    })
   }
   handleSubmitPagination = (comment) =>{
     console.log(comment)
@@ -52,7 +58,7 @@ class Demo extends Component {
         <div className="content-box" style={{marginTop: '20px'}}>
           <div className="content-box-title">分页</div>
           <div className="content-box-body">
-            <Pagina pagination={this.state.paginationData} handleSubmitPagination={this.handleSubmitPagination}/>
+            <Pagina pagination={this.state.paginationData} handleOpenLoading={this.handleOpenLoading.bind(this)} handleSubmitPagination={this.handleSubmitPagination}/>
           </div>
         </div>
 

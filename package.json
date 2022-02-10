@@ -9,7 +9,7 @@
     "echarts-for-react": "^2.0.15-beta.0",
     "history": "^4.9.0",
     "http-proxy-middleware": "^0.19.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "qs": "latest",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
